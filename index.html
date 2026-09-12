@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Góc Tâm Thư 💌</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="fx"></div>
+
+<nav class="topbar" aria-label="Điều hướng chính">
+  <a class="brand" href="#">💌 <span>Góc Tâm Thư</span></a>
+  <div class="nav-links">
+    <a href="#send">Gửi tâm thư</a>
+    <a href="#display">Trình chiếu</a>
+    <button id="music-toggle" type="button" aria-pressed="false">🎵 Bật nhạc</button>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="badge">💌 GÓC TÂM THƯ</div>
+  <h1>Điều bạn muốn <em>gửi gắm?</em></h1>
+  <p>Viết một lời nhắn nhỏ. Để yêu thương được lan tỏa thật xa.</p>
+  <div class="hero-actions">
+    <a href="#send">Gửi tâm thư</a>
+    <button id="presentation" type="button">📺 Màn hình trình chiếu</button>
+  </div>
+  <div class="hero-stats"><span><b id="letter-count">0</b> lời nhắn</span><i></i><span>✨ Lan tỏa yêu thương</span></div>
+</header>
+
+<div class="music-player" aria-hidden="true">
+  <audio id="background-music" loop preload="auto">
+    <source src="background-music.mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+<main>
+<section class="card form-card" id="send">
+  <div class="section-title"><div><span class="eyebrow">GỬI ĐIỀU TỬ TẾ</span><h2>💌 Gửi lời nhắn</h2></div><span class="step">01</span></div>
+  <form id="form">
+    <div class="grid">
+      <label>Tên của bạn
+        <input id="name" maxlength="40" placeholder="Tên hoặc biệt danh" autocomplete="nickname">
+      </label>
+      <label>Loại
+        <select id="type">
+          <option>💌 Tâm thư</option>
+          <option>🎉 Chúc mừng</option>
+          <option>❤️ Lời yêu thương</option>
+          <option>🌟 Lời chúc</option>
+        </select>
+      </label>
+    </div>
+    <label>Nội dung
+      <textarea id="message" required placeholder="Viết điều bạn muốn gửi gắm..."></textarea>
+      <span class="counter"><b id="count">0</b>/1000 từ</span>
+    </label>
+    <label class="check-row"><input id="anonymous" type="checkbox"> Gửi ẩn danh</label>
+    <div class="form-actions">
+      <button class="secondary" id="clear-form" type="button">Xóa nội dung</button>
+      <button class="primary" id="submit-button" type="submit">Gửi tâm thư 💖</button>
+    </div>
+  </form>
+</section>
+
+<section class="screen-card" id="display">
+  <div class="screen-head">
+    <b id="currentType">💌 Tâm thư</b>
+    <span><i></i> <span id="play-status">Đang chờ</span></span>
+  </div>
+  <div id="screen" class="screen">
+    <div class="empty">💗<strong>Đang chờ những lời nhắn...</strong><small>Hãy gửi tâm thư đầu tiên.</small></div>
+  </div>
+  <div class="controls">
+    <button id="prev" type="button">← Trước</button>
+    <span id="info">0 / 0</span>
+    <button id="next" type="button">Sau →</button>
+    <button id="pause-slideshow" type="button" aria-pressed="false">⏸ Tạm dừng</button>
+  </div>
+</section>
+
+<section class="card info">
+  <div class="section-title"><div><span class="eyebrow">MỘT GÓC NHỎ</span><h3>🌸 Cách hoạt động</h3></div><span class="step">02</span></div>
+  <p>Viết điều bạn muốn nói, chọn một chủ đề và gửi đi. Các lời nhắn sẽ lần lượt xuất hiện trên màn hình trình chiếu, tự chuyển sau mỗi 5 giây.</p>
+</section>
+</main>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<a class="floating-page-button" href="about.html" aria-label="Mở trang giới thiệu">✦ <span>Khám phá thêm</span></a>
+<footer>Made with ❤️ for khoa hoc moi truong</footer>
+<script src="main.js"></script>
+</body>
+</html>
